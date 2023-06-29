@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 public class Program {
     public static void main(String[] args) {
         String pathToFile = "src/main/resources/names.txt";
-        HashMap<String, Integer> namesAndCount = readDataFromFileToGashMap(pathToFile);
+        HashMap<String, Integer> namesAndCount = readDataFromFileToHashMap(pathToFile);
         Scanner scanner = new Scanner(System.in);
         while (true){
             System.out.println("_______MENU_______");
@@ -46,7 +46,7 @@ public class Program {
         namesAndCount.forEach((s, integer) -> System.out.println("Имя " + s + " встречается " + integer + " раз"));
     }
 
-    private static HashMap<String, Integer> readDataFromFileToGashMap(String pathToFile) {
+    private static HashMap<String, Integer> readDataFromFileToHashMap(String pathToFile) {
         Stream<String> lines;
         try {
             lines = Files.lines((Paths.get(pathToFile)));
@@ -64,7 +64,5 @@ public class Program {
 
         return namesAndCountTemp;
     }
-
-
 }
 
