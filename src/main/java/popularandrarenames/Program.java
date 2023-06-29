@@ -33,7 +33,7 @@ public class Program {
     private static void showRareNames(HashMap<String, Integer> namesAndCount) {
         Optional<Map.Entry<String, Integer>> min = namesAndCount.entrySet().stream()
                 .min(Map.Entry.comparingByValue());
-        System.out.println(min);
+        System.out.println("Имя " + min.get().getKey() + " встречается " + min.get().getValue() + " раз");
     }
 
     private static void showPopularNames(HashMap<String, Integer> namesAndCount) {
